@@ -8,14 +8,14 @@ If there is no common prefix, return an empty string'''
 # add them to a list.
 
 def findMinLength(strList): 
-    return len(min(arr, key = len)) 
+    return len(min(arr, key = len)) # find the length of the array so that we can find the listed combination
   
 def allContainsPrefix(strList, str, start, end): 
     for i in range(0, len(strList)): 
         word = strList[i] 
         for j in range(start, end + 1): 
             if word[j] != str[j]: 
-                return False
+                return False            # Checks the range/length of the list until they are found so we can append them to our list
     return True
   
 # A Function that returns the longest 
@@ -46,12 +46,11 @@ def CommonPrefix(strList):
   
     return prefix 
   
-# Driver Code 
-arr = ["geeksforgeeks", "geeks","geek", "geezer"] 
+#Creates the arrays and instantiates our functions
+arr = ["boomer", "bomb","bogus", "boo"] 
 lcp = CommonPrefix(arr) 
   
 if len(lcp) > 0: 
-    print ("The longest common prefix is " + 
-                                 str(lcp)) 
+    print ("The longest common prefix is " + str(lcp)) 
 else: 
     print ("There is no common prefix")
