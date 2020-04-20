@@ -25,3 +25,27 @@ for i in sub:
     if len(sub[-1]) <= len(i):
         sub += i
     print(sub) #parenthesis needed to be put closer together
+
+def is_palindrome(text):
+    left = 0
+    right = len(text) - 1
+
+    while left < right:
+        if text[left] != text[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+
+print(is_palindrome("GoldFinger"))
+
+def recursive_is_palindrome(text, left, right):
+
+    if left == right or left > right:
+        return True
+    if text[left] != text[right]:
+        return False
+
+    return recursive_is_palindrome(text, left + 1, right -1)
+
+print(recursive_is_palindrome("tacocat", 0, len("tacocat") - 1))
